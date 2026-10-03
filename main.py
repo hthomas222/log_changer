@@ -3,11 +3,13 @@ import sys
 from rich.console import Console
 from rich.table import Table
 
+
 def ip_viewer():
     with open(log_file) as file:
         file = file.read()
         gotem = re.findall("\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}", file)
     return gotem
+
 
 def ip_replacer(o, n):
     with open(log_file) as file:
@@ -16,11 +18,13 @@ def ip_replacer(o, n):
     with open(log_file, "w") as file:
         file.write(rep)
 
+
 def pid_viewer():
     with open(log_file) as file:
         file = file.read()
         pids = re.findall("\d{4}", file)
     return pids
+
 
 def pid_replacer(o, n):
     with open(log_file) as file:
@@ -29,19 +33,37 @@ def pid_replacer(o, n):
     with open(log_file, "w") as file:
         file.write(rep)
 
+
 def options():
-    console.print("[cyan]--------------------------------OPTIONS--------------------------------[/cyan]")
+    console.print(
+        "[cyan]--------------------------------OPTIONS--------------------------------[/cyan]"
+    )
     print()
-    console.print("\t[green]1[/green] - [red]IP Viewer[/red] - [blue]Lists the IP addresses found in the log file.[/blue]")
-    console.print("\t[green]2[/green] - [red]IP Changer[/red] - [blue]Changes the IP addresses in the log file.[/blue]")
-    console.print("\t[green]3[/green] - [red]PID Viewer[/red] - [blue]Lists the PIDs found in the log file.[/blue]")
-    console.print("\t[green]4[/green] - [red]PID Changer[/red] - [blue]Changes the PIDs in the log file.[/blue]")
-    console.print("\t[green]5[/green] - [red]LISTS THE OPTIONS[/red] - [blue]This command will list all available options.[/blue]")
-    console.print("\t[green]0[/green] - [red]EXITS PROGRAM[/red] - [blue]This command will exit the program.[/blue]")
+    console.print(
+        "\t[green]1[/green] - [red]IP Viewer[/red] - [blue]Lists the IP addresses found in the log file.[/blue]"
+    )
+    console.print(
+        "\t[green]2[/green] - [red]IP Changer[/red] - [blue]Changes the IP addresses in the log file.[/blue]"
+    )
+    console.print(
+        "\t[green]3[/green] - [red]PID Viewer[/red] - [blue]Lists the PIDs found in the log file.[/blue]"
+    )
+    console.print(
+        "\t[green]4[/green] - [red]PID Changer[/red] - [blue]Changes the PIDs in the log file.[/blue]"
+    )
+    console.print(
+        "\t[green]5[/green] - [red]LISTS THE OPTIONS[/red] - [blue]This command will list all available options.[/blue]"
+    )
+    console.print(
+        "\t[green]0[/green] - [red]EXITS PROGRAM[/red] - [blue]This command will exit the program.[/blue]"
+    )
     print()
 
+
 console = Console()
-console.print("[cyan]--------------------------------LOGGER--------------------------------[/cyan]")
+console.print(
+    "[cyan]--------------------------------LOGGER--------------------------------[/cyan]"
+)
 print()
 log_file = console.input("[cyan]Enter the log file: [/cyan]")
 print()
@@ -60,7 +82,9 @@ while user_input != "0":
     table.add_row("2", "IP Changer", "Changes the IP addresses in the log file.")
     table.add_row("3", "PID Viewer", "Lists the PIDs found in the log file.")
     table.add_row("4", "PID Changer", "Changes the PIDs in the log file.")
-    table.add_row("5", "LISTS THE OPTIONS", "This command will list all available options.")
+    table.add_row(
+        "5", "LISTS THE OPTIONS", "This command will list all available options."
+    )
     console = Console()
     console.print(table)
     print()
@@ -101,7 +125,7 @@ while user_input != "0":
         replace = console.input("[cyan]Enter a PID to replace: [/cyan]")
         new = console.input("[cyan]Enter new PID: [/cyan]")
         print()
-        pid_replacer(replace, new)  
+        pid_replacer(replace, new)
     elif user_input == "5":
         options()
     elif user_input == "0":
