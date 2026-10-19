@@ -1,0 +1,10 @@
+2026-10-02 08:12:05 INFO  [auth] pid=1842  Successful login   user=admin     ip=192.168.1.46   method=password
+2026-10-02 08:15:33 WARN  [auth] pid=1857  Failed login       user=root      ip=203.0.113.87   reason=invalid_password  attempts=1
+2026-10-02 08:18:11 INFO  [auth] pid=1871  Successful login   user=jdoe      ip=10.0.0.112     method=password
+2026-10-02 08:21:47 WARN  [auth] pid=1889  Failed login       user=admin     ip=198.51.100.23  reason=invalid_password  attempts=2
+2026-10-02 08:24:19 INFO  [auth] pid=1903  Successful login   user=sadmin    ip=172.16.5.9     method=token
+2026-10-02 08:27:55 WARN  [auth] pid=1920  Failed login       user=test      ip=203.0.113.87   reason=unknown_user      attempts=1
+2026-10-02 08:30:08 INFO  [auth] pid=1935  Successful login   user=admin     ip=192.168.1.46   method=password
+2026-10-02 08:33:42 WARN  [auth] pid=1951  Failed login       user=admin     ip=198.51.100.23  reason=invalid_password  attempts=3
+2026-10-02 08:34:01 INFO  [auth] pid=1954  Account locked     user=admin     ip=198.51.100.23  reason=too_many_failures
+2026-10-02 08:38:27 INFO  [auth] pid=1978  Successful login   user=backup    ip=10.10.0.8      method=key
