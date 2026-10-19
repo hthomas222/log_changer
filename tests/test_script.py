@@ -14,6 +14,7 @@ def pid_viewer():
         pids = re.findall("\d{4}", file)
     return pids
 
+
 def ip_replacer(o, n):
     with open("test.log") as file:
         file = file.read()
@@ -21,10 +22,10 @@ def ip_replacer(o, n):
     with open("test.log", "w") as file:
         file.write(rep)
 
+
 def pid_replacer(o, n):
     with open("test.log") as file:
         file = file.read()
     rep = file.replace(o, n)
     with open("test.log", "w") as file:
         file.write(rep)
-
